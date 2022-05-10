@@ -1,9 +1,9 @@
 import torch
 import numpy as np
-from skimage.measure.simple_metrics import compare_psnr
+# from skimage.measure.simple_metrics import compare_psnr
 import pickle
 import lycon
-from skimage.measure import compare_ssim
+# from skimage.measure import compare_ssim
 
 
 def is_numpy_file(filename):
@@ -58,9 +58,9 @@ def batch_SSIM(img, imclean):
     Img = img.data.cpu().numpy().astype(np.float32)
     Iclean = imclean.data.cpu().numpy().astype(np.float32)
     SSIM = []
-    for i in range(Img.shape[0]):
-        ssim = compare_ssim(Iclean[i,:,:,:], Img[i,:,:,:], gaussian_weights=True, use_sample_covariance=False, multichannel =True)
-        SSIM.append(ssim)
+    # for i in range(Img.shape[0]):
+        # ssim = compare_ssim(Iclean[i,:,:,:], Img[i,:,:,:], gaussian_weights=True, use_sample_covariance=False, multichannel =True)
+        # SSIM.append(ssim)
     return sum(SSIM)/len(SSIM)
 
 
